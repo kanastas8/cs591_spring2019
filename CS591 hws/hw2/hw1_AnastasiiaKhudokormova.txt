@@ -1,0 +1,89 @@
+Student: Anastasiia Khudokormova
+
+Part 1: Introduction Sequence
+
+Problem 1
+
+$ delay 2000
+$ show goal
+$ git commit
+$ git commit
+
+Problem 2
+
+$ delay 2000
+$ show goal
+$ git checkout -b bugFix
+
+Problem 3
+
+$ delay 2000
+$ show goal
+$ git checkout -b bugFix
+$ git commit
+$ git checkout master
+$ git commit
+$ objective
+$ git merge bugFix
+
+Problem 4
+
+$ delay 2000
+$ show goal
+$ git checkout -b bugFix
+$ git commit
+$ git checkout master
+$ git commit
+$ git checkout bugFix
+$ git rebase master
+
+Part 2: Ramping Up
+
+Problem 1
+
+$ delay 2000
+$ show goal
+$ git checkout C4
+
+
+Problem 2
+
+$ delay 2000
+$ show goal
+$ git checkout bugFix^
+
+
+Problem 3
+
+$ delay 2000
+$ show goal
+$ git branch -f master C6
+$ git branch -f bugFix C0
+$ git checkout C1
+
+
+Problem 4
+
+$ delay 2000
+$ show goal
+$ git reset local~1
+$ git checkout pushed
+$ git revert pushed
+
+
+
+Part 3: Moving Work Around
+
+Problem 1
+
+$ delay 2000
+$ show goal
+$ git cherry-pick C3 C4 C7
+
+
+Problem 2
+
+$ delay 2000
+$ show goal
+$ git rebase -i master~4 --aboveAll
+
