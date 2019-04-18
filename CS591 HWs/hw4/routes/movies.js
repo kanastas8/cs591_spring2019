@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const request = require("request");
 
-const axios = require('axios');
 
 const url = 'https://api.themoviedb.org/3/movie/popular?api_key=961f63d93324cb5c95005609d7cc5853&language=en-US&page=1'
 router.get('/movies', function (req,res,next) {
@@ -20,7 +19,7 @@ router.get('/movies', function (req,res,next) {
 
     console.log(movies_arr)
 
-    //res.render('hw3', {title: 'Movies update :)', movies: body.results.original_title, release: body.results.release_date});
+    res.render('movie.component', {movies: movies_arr});
 
   });
 
