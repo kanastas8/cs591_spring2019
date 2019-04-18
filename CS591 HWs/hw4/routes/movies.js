@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const request = require("request");
+//File system module
+const fs = require('fs');
 
 
-const url = 'https://api.themoviedb.org/3/movie/popular?api_key=961f63d93324cb5c95005609d7cc5853&language=en-US&page=1'
 router.get('/movies', function (req,res,next) {
 
+  const url = 'https://api.themoviedb.org/3/movie/popular?api_key=961f63d93324cb5c95005609d7cc5853&language=en-US&page=1'
 
   const movies_arr = [];
   request(url, {json: true}, function(error, response, body){

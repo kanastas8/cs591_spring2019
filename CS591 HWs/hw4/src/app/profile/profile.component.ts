@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  public name: string;
+  public favmovie: string;
+
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit() {
   }

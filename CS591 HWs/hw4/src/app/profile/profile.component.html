@@ -1,2 +1,5 @@
 <h1>Users</h1>
-
+<div class="todo-input-wrapper">
+  <input type="text" [(ngModel)]="todoText" value={{todoText}}/>
+  <button class="btn btn-primary" (click)="addTodo()">Submit</button>
+</div>
