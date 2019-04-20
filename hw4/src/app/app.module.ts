@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MovieComponent } from './movie/movie.component';
 import { ProfileComponent } from './profile/profile.component';
 import {ProfileService} from './services/profile.service';
+import {MovieService} from './services/movie.service';
 
 
 @NgModule({
@@ -21,10 +23,12 @@ import {ProfileService} from './services/profile.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    ProfileService
+    ProfileService,
+    MovieService
   ],
   bootstrap: [AppComponent]
 })

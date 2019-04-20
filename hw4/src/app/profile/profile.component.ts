@@ -11,6 +11,7 @@ export class ProfileComponent implements OnInit {
 
   public name: string;
   public favmovie: string;
+  public usernames: string[];
 
   constructor(private profileService: ProfileService) {
     this.name = '';
@@ -20,7 +21,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  private addUser(): void{
+  private addUser(): void {
     this.profileService.addUser(this.name, this.favmovie);
     this.name = '';
     this.favmovie = '';

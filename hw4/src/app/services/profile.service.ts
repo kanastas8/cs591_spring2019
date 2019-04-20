@@ -6,24 +6,29 @@ import {User} from '../users';
 })
 export class ProfileService {
 
-  private users: User[];
+  public userList: any[] = [];
 
   constructor() {}
 
   public addUser(name: string, favmovie: string): void{
-    let user = new User(name, favmovie);
-    let users = this.getUsers();
-    this.users.push(user);
-    this.setLocalStorageUsers(users);
+    // let user = new User(name, favmovie);
+    let userList = this.getUsers();
+    const user = {user: {name, favmovie}};
+    console.log(user);
+    this.userList.push(user);
+    // this.setLocalStorageUsers(users);
+    console.log(this.userList);
+    console.log('herher');
+    localStorage.setItem('users', JSON.stringify(this.userList));
   }
 
-  public getUsers(): User[] {
-    const localStorageItem = JSON.parse(localStorage.getItem('users'));
-    return localStorageItem == null ? [] : localStorageItem.users;
+  public getUsers(): string[] {
+    // const localStorageItem = JSON.parse(localStorage.getItem('users'));
+    // return localStorageItem == null ? [] : localStorageItem.users;
+    const myItem = JSON.parse(localStorage.getItem('users'));
+    return myItem[0].user.name;
   }
 
-  public setLocalStorageUsers(users: User[]): void {
-    localStorage.setItem('users', JSON.stringify( {users: users}));
-  }
+
 
 }

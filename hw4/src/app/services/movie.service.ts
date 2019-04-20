@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+interface Movie {
+  name: string;
+  release: string;
+}
 
 
-@Injectable({
+@Injectable( {
   providedIn: 'root'
 })
+
 export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  private url = 'http://localhost:3000/hw4';
+  public url = 'http://localhost:3000';
 
-  getListMovies() {
-    return this.http.get(this.url);
+  getListMovies(): Observable<string[]> {
+    return this.http.get<string[]>(this.url);
   }
 }
